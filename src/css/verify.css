@@ -1,0 +1,14 @@
+.verify-container {
+  height: 453px;
+  width: 576px;
+  padding: 40px;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.verify-email {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
