@@ -11,7 +11,7 @@ const Login: React.FC<{}> = () => {
         <p className="welcome-back">Welcome back to ECOMMERCE</p>
         <p className="next-gen">The next gen business marketplace</p>
       </div>
-      <div className="form-wrapper">
+      <div className="form-wrapper" style={{ marginTop: "31px" }}>
         <form>
           <div className="input-field">
             <label>Email</label>
