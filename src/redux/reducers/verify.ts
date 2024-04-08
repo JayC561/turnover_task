@@ -1,38 +1,31 @@
-import { CategoriesResponse } from "../api/interface";
 import { AsyncStatus, IAsyncStatus, IActionObject } from "../interface";
 
-interface CategoriesState {
+interface LoginState {
   asyncStatus: IAsyncStatus;
-  data?: CategoriesResponse;
   error?: string;
 }
 
-const INITIAL_STATE: CategoriesState = {
+const INITIAL_STATE: LoginState = {
   asyncStatus: AsyncStatus.INIT,
-  data: [],
 };
 
-const categories = (
-  state = INITIAL_STATE,
-  action: IActionObject
-): CategoriesState => {
+const verify = (state = INITIAL_STATE, action: IActionObject): LoginState => {
   switch (action.type) {
-    case "GET_CATEGORIES_REQUEST": {
+    case "VERIFY_USER_REQUEST": {
       return {
         ...state,
         asyncStatus: AsyncStatus.LOADING,
       };
     }
-    case "GET_CATEGORIES_SUCCESS": {
+    case "VERIFY_USER_SUCCESS": {
       return {
         asyncStatus: AsyncStatus.SUCCESS,
-        data: action?.response || [],
       };
     }
-    case "GET_CATEGORIES_ERROR": {
+    case "VERIFY_USER_ERROR": {
       return {
         asyncStatus: AsyncStatus.ERROR,
-        error: action.error,
+        error: action?.error,
       };
     }
     default: {
@@ -41,4 +34,4 @@ const categories = (
   }
 };
 
-export default categories;
+export default verify;

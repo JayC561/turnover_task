@@ -10,8 +10,8 @@ export enum AsyncStatus {
 
 export type IAsyncStatus = keyof typeof AsyncStatus;
 
-export interface IActionObject {
+export type IActionObject = {
   type: ActionType;
-  response?: AxiosResponse<any>;
+  response?: any;
   error?: string;
-}
+};

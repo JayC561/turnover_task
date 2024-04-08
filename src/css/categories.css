@@ -1,0 +1,36 @@
+.categories-container {
+  width: 504px;
+  height: 600px;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  padding: 60px;
+  margin: 0 auto;
+}
+
+.mark-ur-interest {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.keep-you-notified {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 37px;
+}
+
+.saved-interest {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.next-page,
+.previous-page {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

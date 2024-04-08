@@ -1,0 +1,20 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.page {
+  color: #c1c1c1;
+  cursor: pointer;
+}
+
+.active {
+  color: #000;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

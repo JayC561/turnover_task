@@ -25,5 +25,6 @@ export interface LoginUserPayload {
 }
 
 export interface VerifyUserPayload {
+  otp: string;
   email: string;
 }

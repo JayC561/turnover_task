@@ -1,7 +1,9 @@
 const jsonServer = require("json-server");
 const categoriesJson = require("./categories.json");
 const usersJson = require("./users.json");
-const json = { ...categoriesJson, ...usersJson };
+const loginJson = require("./login.json");
+const verifyJson = require("./verify.json");
+const json = { ...categoriesJson, ...usersJson, ...loginJson, ...verifyJson };
 
 const server = jsonServer.create();
 const router = jsonServer.router(json);
@@ -20,13 +22,6 @@ server.use((_, res, next) => {
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   next();
-});
-
-server.post("/login", (req, res, next) => {
-  const email = req.body?.email;
-  return res.send({
-    email,
-  });
 });
 
 server.use(router, middlewares);

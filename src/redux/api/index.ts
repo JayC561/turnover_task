@@ -4,10 +4,16 @@ import {
   SignupUserResponse,
   SignUpUserPayload,
   LoginUserPayload,
+  VerifyUserPayload,
 } from "./interface";
 
 const client = axios.create({
   baseURL: "http://localhost:3000",
+});
+
+client.interceptors.response.use(async (response) => {
+  await new Promise((resolve) => setTimeout(resolve, 2500));
+  return response.data;
 });
 
 const api = {
@@ -15,19 +21,19 @@ const api = {
     return client.get<CategoriesResponse>("/categories");
   },
   signUpUser(req: SignUpUserPayload) {
-    return client.post<SignUpUserPayload, SignupUserResponse>(
-      "/users",
-      req
-    ) as unknown as Promise<AxiosResponse<SignupUserResponse>>;
+    return client.post<
+      SignupUserResponse,
+      AxiosResponse<SignupUserResponse, SignUpUserPayload>
+    >("/users", req);
   },
   loginUser(req: LoginUserPayload) {
-    return new Promise((res) => {
-      setTimeout(() => {
-        return res({
-          email: req.email,
-        });
-      }, 1500);
-    });
+    return client.post<{}, AxiosResponse<{}, LoginUserPayload>>("/login", req);
+  },
+  verifyUser(req: VerifyUserPayload) {
+    return client.post<{}, AxiosResponse<{}, VerifyUserPayload>>(
+      "/verify",
+      req
+    );
   },
 };
 
