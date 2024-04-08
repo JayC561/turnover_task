@@ -1,15 +1,6 @@
-# 🚀 Welcome to your new awesome project!
+# To run locally
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+<li>Clone repo</li>
+<li>Install node_modules</li>
+<li>Run <em>npm run dev</em> for running React application</li>
+<li>Run <em>npm run server</em> in different terminal for mock server</li>
