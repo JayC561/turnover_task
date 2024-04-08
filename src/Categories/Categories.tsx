@@ -50,7 +50,6 @@ const Categories: React.FC<Props> = ({ categories, getCategories }) => {
 
   useEffect(() => {
     if ((isSuccess(categories) && parsedCategories) || [].length) {
-      console.log({ parsedCategories });
       const catsToShow = [];
       for (let i = start; i < end; i++) {
         const val = parsedCategories[i];
